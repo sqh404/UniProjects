@@ -1,0 +1,132 @@
+{UTF-8}
+Appetite=
+	Excercise*excercise hunger factor+weight*weight hunger factor
+	~	lbs/Month
+	~		|
+
+Calorie Consumption=
+	Appetite*food to calorie factor
+	~	lbs/Month
+	~		|
+
+Excercise=
+	Rate of Excercise
+	~	lbs/Month
+	~		|
+
+excercise hunger factor=
+	0.5
+	~	 [0,1,0.05]
+	~		|
+
+food to calorie factor=
+	1
+	~	 [0,2,0.1]
+	~		|
+
+Rate of Excercise=
+	1
+	~	lbs/Month [0,5,0.25]
+	~		|
+
+weight= INTEG (
+	Calorie Consumption-Excercise,
+		150)
+	~	lbs
+	~		|
+
+weight hunger factor=
+	0.01
+	~	 [0,0.1,0.01]
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,weight,507,173,40,20,3,3,0,0,0,0,0,0
+10,2,Appetite,264,190,28,11,8,3,0,0,0,0,0,0
+12,3,48,345,168,10,8,0,3,0,0,-1,0,0,0
+1,4,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(442,168)|
+1,5,6,3,100,0,0,22,0,0,0,-1--1--1,,1|(380,168)|
+11,6,0,411,168,6,8,34,3,0,0,1,0,0,0
+10,7,Calorie Consumption,411,184,54,8,40,3,0,0,-1,0,0,0
+12,8,48,639,173,10,8,0,3,0,0,-1,0,0,0
+1,9,11,8,4,0,0,22,0,0,0,-1--1--1,,1|(611,173)|
+1,10,11,1,100,0,0,22,0,0,0,-1--1--1,,1|(564,173)|
+11,11,0,588,173,6,8,34,3,0,0,1,0,0,0
+10,12,Excercise,588,189,26,8,40,3,0,0,-1,0,0,0
+10,13,Rate of Excercise,556,268,45,8,8,3,0,0,0,0,0,0
+1,14,13,12,0,0,0,0,0,64,0,-1--1--1,,1|(568,235)|
+1,15,1,2,1,0,0,0,0,64,0,-1--1--1,,1|(447,221)|
+1,16,11,2,1,0,0,0,0,64,0,-1--1--1,,1|(495,115)|
+1,17,2,7,0,0,0,0,0,64,0,-1--1--1,,1|(317,187)|
+10,18,weight hunger factor,145,148,52,8,8,3,0,0,0,0,0,0
+10,19,excercise hunger factor,212,261,58,8,8,3,0,0,0,0,0,0
+1,20,18,2,0,0,0,0,0,64,0,-1--1--1,,1|(194,165)|
+1,21,19,2,0,0,0,0,0,64,0,-1--1--1,,1|(231,232)|
+10,22,food to calorie factor,363,257,53,8,8,3,0,0,0,0,0,0
+1,23,22,7,0,0,0,0,0,64,0,-1--1--1,,1|(382,226)|
+12,24,2050414524,241,459,150,150,3,12,0,0,1,0,0,0
+weight
+12,25,2050414528,595,453,150,150,3,44,0,0,1,0,0,0
+flows
+///---\\\
+:GRAPH weight
+:TITLE weight
+:SCALE
+:VAR weight
+
+:GRAPH flows
+:TITLE flows
+:SCALE
+:VAR Calorie Consumption
+:VAR Excercise
+:L<%^E!@
+1:Current.vdf
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:food to calorie factor
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:1
+24:0
+25:100
+26:100

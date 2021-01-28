@@ -1,0 +1,4 @@
+LOAD DATA INFILE 'your_file' 
+INTO TABLE employee 
+FIELDS ENCLOSED BY '\"' TERMINATED BY ','
+;

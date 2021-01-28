@@ -1,0 +1,179 @@
+{UTF-8}
+Capacity=
+	100
+	~	tons
+	~		|
+
+Compost Time=
+	48
+	~	Week
+	~		|
+
+Composting=
+	DELAY FIXED( Influx-Overflow , Compost Time + (Influx-Overflow)/Preperation Rate, 0 \
+		)
+	~	tons/Week
+	~		|
+
+Finished stock= INTEG (
+	Composting-Used,
+		0)
+	~	tons
+	~		|
+
+Usage Rate=
+	3
+	~	tons/Week
+	~		|
+
+Overflow=
+	IF THEN ELSE( (Finished stock + Processing) <= Capacity , 0 , Influx )
+	~	tons/Week
+	~		|
+
+Preperation Rate=
+	3
+	~	tons/Week
+	~		|
+
+Total Production= INTEG (
+	Used,
+		0)
+	~	
+	~		|
+
+Total Waste= INTEG (
+	Overflow,
+		0)
+	~	tons
+	~		|
+
+Used=
+	IF THEN ELSE( Finished stock > Usage Rate , Usage Rate , 0 )
+	~	tons/Week
+	~		|
+
+Influx=
+	3
+	~	tons/Week
+	~		|
+
+Processing= INTEG (
+	Influx-Composting-Overflow,
+		0)
+	~	tons
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 260
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Week [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,150,0
+10,1,Processing,198,127,40,20,3,3,0,0,0,0,0,0
+10,2,Finished stock,356,128,40,20,3,3,0,0,0,0,0,0
+10,3,Total Production,541,125,40,20,3,3,0,0,0,0,0,0
+10,4,Total Waste,311,256,40,20,3,3,0,0,0,0,0,0
+12,5,48,73,125,10,8,0,3,0,0,-1,0,0,0
+1,6,8,1,4,0,0,22,0,0,0,-1--1--1,,1|(140,127)|
+1,7,8,5,100,0,0,22,0,0,0,-1--1--1,,1|(97,127)|
+11,8,48,117,127,6,8,34,3,0,0,1,0,0,0
+10,9,Influx,117,143,17,8,40,3,0,0,-1,0,0,0
+1,10,12,2,4,0,0,22,0,0,0,-1--1--1,,1|(297,126)|
+1,11,12,1,100,0,0,22,0,0,0,-1--1--1,,1|(252,126)|
+11,12,236,272,126,6,8,34,3,0,0,1,0,0,0
+10,13,Composting,272,142,32,8,40,3,0,0,-1,0,0,0
+1,14,16,3,4,0,0,22,0,0,0,-1--1--1,,1|(477,126)|
+1,15,16,2,100,0,0,22,0,0,0,-1--1--1,,1|(419,126)|
+11,16,204,448,126,6,8,34,3,0,0,1,0,0,0
+10,17,Used,448,142,15,8,40,3,0,0,-1,0,0,0
+1,18,20,4,4,0,0,22,0,0,0,-1--1--1,,1|(236,256)|
+1,19,20,1,100,0,0,22,0,0,0,-1--1--1,,1|(196,197)|
+11,20,300,196,256,6,8,34,3,0,0,1,0,0,0
+10,21,Overflow,196,272,25,8,40,131,0,0,-1,0,0,0
+1,22,8,12,1,0,0,0,0,64,0,-1--1--1,,1|(182,86)|
+10,23,Compost Time,264,201,38,8,8,3,0,0,0,0,0,0
+1,24,23,13,0,0,0,0,0,64,0,-1--1--1,,1|(266,178)|
+1,25,21,13,1,0,0,0,0,64,0,-1--1--1,,1|(229,184)|
+1,26,2,20,1,0,0,0,0,64,0,-1--1--1,,1|(305,204)|
+1,27,1,20,1,0,0,0,0,64,0,-1--1--1,,1|(152,201)|
+10,28,Capacity,62,270,24,8,8,3,0,0,0,0,0,0
+1,29,28,21,0,0,0,0,0,64,0,-1--1--1,,1|(121,270)|
+1,30,9,20,1,0,0,0,0,64,0,-1--1--1,,1|(117,193)|
+1,31,2,16,1,0,0,0,0,64,0,-1--1--1,,1|(391,83)|
+10,32,Usage Rate,387,198,30,8,8,3,0,0,0,0,0,0
+1,33,32,17,1,0,0,0,0,64,0,-1--1--1,,1|(439,185)|
+10,34,Preperation Rate,299,54,44,8,8,3,0,0,0,0,0,0
+1,35,34,12,0,0,0,0,0,64,0,-1--1--1,,1|(287,84)|
+12,38,0,488,329,135,96,3,188,0,0,1,0,0,0
+Production_and_Waste
+12,39,0,776,224,150,150,3,44,0,0,1,0,0,0
+facility_stocks
+///---\\\
+:GRAPH facility_stocks
+:TITLE  
+:X-AXIS Time
+:SCALE
+:VAR Processing
+:VAR Finished Stock
+
+:GRAPH Production_and_Waste
+:TITLE  
+:SCALE
+:VAR Total Production
+:VAR Total Waste
+:L<%^E!@
+1:Current.vdf
+1:mid capacity.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:150,0
+27:0,
+34:0,
+4:Time
+5:Influx
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:3
+41:0
+42:1
+24:0
+25:260
+26:260

@@ -1,0 +1,156 @@
+{UTF-8}
+Reinvestment=
+	Revenue*Reinvestment Fraction
+	~	computers/Quarter
+	~		|
+
+Depreciation Rate=
+	0.1
+	~	
+	~		|
+
+Discard=
+	Computers*Depreciation Rate
+	~	computers/Quarter
+	~		|
+
+Total Revenue= INTEG (
+	Revenue,
+		0)
+	~	dollars
+	~		|
+
+Revenue=
+	Employees*SQRT( Computers )
+	~	dollars/Quarter
+	~		|
+
+Reinvestment Fraction=
+	0.02
+	~	computers/dollar
+	~		|
+
+Computers= INTEG (
+	Reinvestment-Discard,
+		100)
+	~	computers
+	~		|
+
+Employees=
+	100
+	~	people
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 120
+	~	Quarter
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Quarter
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Quarter [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.25
+	~	Quarter [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,Computers,176,169,40,20,3,3,0,0,0,0,0,0
+10,2,Employees,242,73,29,8,8,3,0,0,0,0,0,0
+12,3,48,299,172,10,8,0,3,0,0,-1,0,0,0
+1,4,6,3,4,0,0,22,0,0,0,-1--1--1,,1|(273,170)|
+1,5,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(231,170)|
+11,6,48,252,170,6,8,34,3,0,0,1,0,0,0
+10,7,Discard,252,186,21,8,40,3,0,0,-1,0,0,0
+12,8,48,174,270,10,8,0,3,0,0,-1,0,0,0
+1,9,11,1,4,0,0,22,0,0,0,-1--1--1,,1|(174,206)|
+1,10,11,8,100,0,0,22,0,0,0,-1--1--1,,1|(174,249)|
+11,11,48,174,230,8,6,33,3,0,0,4,0,0,0
+10,12,Reinvestment,217,230,35,8,40,3,0,0,-1,0,0,0
+10,13,Total Revenue,462,170,40,20,3,3,0,0,0,0,0,0
+12,14,48,336,165,10,8,0,3,0,0,-1,0,0,0
+1,15,17,13,4,0,0,22,0,0,0,-1--1--1,,1|(406,165)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(362,165)|
+11,17,48,384,165,6,8,34,3,0,0,1,0,0,0
+10,18,Revenue,384,181,23,8,40,3,0,0,-1,0,0,0
+1,19,2,18,1,0,0,0,0,64,0,-1--1--1,,1|(341,122)|
+1,20,1,17,1,0,0,0,0,64,0,-1--1--1,,1|(289,203)|
+1,21,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(219,143)|
+1,22,17,11,1,0,0,0,0,64,0,-1--1--1,,1|(334,223)|
+10,23,Reinvestment Fraction,328,265,57,8,8,3,0,0,0,0,0,0
+10,24,Depreciation Rate,189,120,46,8,8,3,0,0,0,0,0,0
+1,25,24,6,1,0,0,0,0,64,0,-1--1--1,,1|(235,148)|
+1,26,23,11,1,0,0,0,0,64,0,-1--1--1,,1|(230,262)|
+12,27,0,581,450,150,150,3,44,0,0,1,0,0,0
+computers
+12,29,0,920,450,150,150,3,44,0,0,1,0,0,0
+revenue_rate
+12,30,0,239,450,150,150,3,44,0,0,1,0,0,0
+computer_flows
+///---\\\
+:GRAPH computers
+:TITLE computers
+:SCALE
+:VAR Computers
+
+:GRAPH revenue
+:TITLE  
+:SCALE
+:VAR Revenue
+
+:GRAPH computer_flows
+:TITLE computer flows
+:SCALE
+:VAR Discard
+:VAR Reinvestment
+
+:GRAPH revenue_rate
+:TITLE Revenue per quarter
+:SCALE
+:VAR Revenue
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:Depreciation Rate
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:1
+41:0
+42:1
+24:0
+25:120
+26:120

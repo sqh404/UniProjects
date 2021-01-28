@@ -1,0 +1,144 @@
+{UTF-8}
+Influx monitor= INTEG (
+	Influx,
+		0)
+	~	lbs
+	~		|
+
+Composting=
+	DELAY FIXED( (Processing/Setup Time) , Compost Time , 0 )
+	~	lbs/Week
+	~		|
+
+Compost Time=
+	48
+	~	Week
+	~		|
+
+Setup Time=
+	1
+	~	Week
+	~		|
+
+"Sold/Used"=
+	1
+	~	lbs/Week
+	~		|
+
+Available Capacity= INTEG (
+	"Sold/Used"-Influx,
+		100)
+	~	lbs [0,100]
+	~		|
+
+Completed In Stock= INTEG (
+	Composting-"Sold/Used",
+		0)
+	~	lbs [0,100]
+	~		|
+
+Influx=
+	3
+	~	lbs/Week
+	~		|
+
+Processing= INTEG (
+	Influx-Composting,
+		0)
+	~	lbs [0,100]
+	~		|
+
+Total Output= INTEG (
+	"Sold/Used",
+		0)
+	~	lbs [0,?]
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 208
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP=
+	48
+	~	Week [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,Available Capacity,165,89,40,20,3,3,0,0,0,0,0,0
+10,2,Processing,331,91,40,20,3,3,0,0,0,0,0,0
+10,3,Completed In Stock,494,89,40,20,3,3,0,0,0,0,0,0
+12,4,48,52,83,10,8,0,3,0,0,-1,0,0,0
+1,5,7,1,4,0,0,22,0,0,0,-1--1--1,,1|(112,83)|
+1,6,7,4,100,0,0,22,0,0,0,-1--1--1,,1|(74,83)|
+11,7,48,93,83,6,8,34,3,0,0,1,0,0,0
+10,8,Influx,93,99,17,8,40,3,0,0,-1,0,0,0
+10,9,Total Output,650,86,40,20,3,3,0,0,0,0,0,0
+1,10,12,9,4,0,0,22,0,0,0,-1--1--1,,1|(594,87)|
+1,11,12,3,100,0,0,22,0,0,0,-1--1--1,,1|(550,87)|
+11,12,236,572,87,6,8,34,3,0,0,1,0,0,0
+10,13,"Sold/Used",572,103,27,8,40,3,0,0,-1,0,0,0
+1,14,13,1,1,0,0,0,0,64,0,-1--1--1,,1|(366,15)|
+1,15,7,2,1,0,0,0,0,64,0,-1--1--1,,1|(166,145)|
+1,16,18,3,4,0,0,22,0,0,0,-1--1--1,,1|(436,90)|
+1,17,18,2,100,0,0,22,0,0,0,-1--1--1,,1|(388,90)|
+11,18,156,412,90,6,8,34,3,0,0,1,0,0,0
+10,19,Composting,412,106,32,8,40,3,0,0,-1,0,0,0
+10,20,Setup Time,362,178,41,8,8,3,0,0,0,0,0,0
+1,21,20,19,0,0,0,0,0,64,0,-1--1--1,,1|(382,147)|
+1,22,2,18,1,0,0,0,0,64,0,-1--1--1,,1|(380,59)|
+10,23,Influx monitor,156,292,40,20,3,3,0,0,0,0,0,0
+1,24,7,23,0,0,0,0,0,64,0,-1--1--1,,1|(119,173)|
+10,25,Compost Time,457,181,38,8,8,3,0,0,0,0,0,0
+1,26,25,18,0,0,0,0,0,64,0,-1--1--1,,1|(437,140)|
+///---\\\
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:Processing
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:3
+41:0
+42:1
+24:0
+25:192
+26:192

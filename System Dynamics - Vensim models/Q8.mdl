@@ -1,0 +1,93 @@
+{UTF-8}
+Appetite  = A FUNCTION OF( Rate of exercise)
+	~	
+	~		|
+
+Conscious  = A FUNCTION OF( weight)
+	~	
+	~		|
+
+Food Consumption  = A FUNCTION OF( Appetite,food intake)
+	~	
+	~		|
+
+food intake  = A FUNCTION OF( Conscious)
+	~	
+	~		|
+
+Rate of exercise  = A FUNCTION OF( weight)
+	~	
+	~		|
+
+weight  = A FUNCTION OF( Food Consumption)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Food Consumption,402,138,43,19,8,3,0,0,0,0,0,0
+10,2,weight,539,221,22,11,8,3,0,0,0,0,0,0
+10,3,Rate of exercise,403,300,51,11,8,3,0,0,0,0,0,0
+10,4,Appetite,261,216,28,11,8,3,0,0,0,0,0,0
+10,5,Conscious,724,239,34,11,8,3,0,0,0,0,0,0
+10,6,food intake,526,317,36,11,8,3,0,0,0,0,0,0
+1,7,1,2,1,0,43,0,2,64,0,-1--1--1,|0||-1--1--1,1|(520,146)|
+1,8,2,3,1,0,43,0,2,192,0,-1--1--1,|0||-1--1--1,1|(492,283)|
+1,9,3,4,1,0,43,0,2,192,0,-1--1--1,|0||-1--1--1,1|(307,278)|
+1,10,4,1,1,0,43,0,2,64,0,-1--1--1,|0||-1--1--1,1|(295,146)|
+1,11,2,5,1,0,43,0,2,192,0,-1--1--1,|0||-1--1--1,1|(637,181)|
+1,12,5,6,1,0,45,0,2,192,0,-1--1--1,|0||-1--1--1,1|(683,283)|
+1,14,6,1,1,0,45,0,2,192,0,-1--1--1,|0||-1--1--1,1|(323,114)|
+12,15,0,396,197,20,20,4,7,0,0,-1,0,0,0
+R
+12,16,0,315,375,20,20,4,7,0,0,-1,0,0,0
+B
+///---\\\
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+5:Conscious
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:1
+24:0
+25:0
+26:0

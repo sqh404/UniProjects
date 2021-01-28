@@ -1,0 +1,49 @@
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "UID": 1234567,
+  "geolat": 41.50234,
+  "geolong": -81.67561,
+  "transcript": [
+    {
+      "school": "Cleveland State University",
+	  "degree": "Bachelor of Science",
+      "program": "Computer Information Science",
+	  "GPA": 3.21,
+	  "Graduation": "Spring 2016",
+	  "classes":[
+		{
+			"Department": "CIS",
+			"Code": 260,
+			"Description": "Introduction to Programming",
+			"Grade": "A-",
+			"Year": 2013
+		},
+		{
+			"Department": "CIS",
+			"Code": 340,
+			"Description": "Systems Programming",
+			"Grade": "C+",
+			"Year": 2014
+		}
+	  ]
+    },
+    {
+      "school": "Cleveland State University",
+	  "degree": "Master of Science",
+      "program": "Information Systems and Technology",
+	  "GPA": 3.05,
+	  "Graduation": "Fall 2019",
+	  "classes":[
+		{
+			"Department": "IST",
+			"Code": 634,
+			"Description": "Enterprise Databases",
+			"Grade": "B",
+			"Year": 2018
+		}
+		]
+    }
+  ]
+}
+	

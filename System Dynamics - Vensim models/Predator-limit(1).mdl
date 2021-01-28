@@ -1,0 +1,201 @@
+{UTF-8}
+CARRYING CAPACITY FOR PREY=
+	2
+	~	prey biomass
+	~		|
+
+prey increase=
+	PREY GROWTH RATE*prey*(1-prey/CARRYING CAPACITY FOR PREY)
+	~	prey biomass/Month
+	~		|
+
+INITIAL PREY=
+	0.1
+	~	prey biomass
+	~		|
+
+INITIAL PREDATOR=
+	0.1
+	~	predator biomass
+	~		|
+
+prey= INTEG (
+	+prey increase-prey loss,
+		INITIAL PREY)
+	~	prey biomass
+	~		|
+
+predator gain=
+	PREDATOR GAIN RATE*meet
+	~	predator biomass/Month
+	~		|
+
+PREDATOR GAIN RATE=
+	1
+	~	1/(prey biomass*Month)
+	~		|
+
+prey loss=
+	PREY LOSS RATE*meet
+	~	prey biomass/Month
+	~		|
+
+PREY LOSS RATE=
+	1
+	~	1/(predator biomass*Month)
+	~		|
+
+energy consumption=
+	ENERGY CONSUMPTION RATE*predator
+	~	predator biomass/Month
+	~		|
+
+ENERGY CONSUMPTION RATE=
+	1
+	~	1/Month
+	~		|
+
+predator= INTEG (
+	+predator gain-energy consumption,
+		INITIAL PREDATOR)
+	~	predator biomass
+	~		|
+
+meet=
+	predator*prey
+	~	prey biomass*predator biomass
+	~		|
+
+PREY GROWTH RATE=
+	1
+	~	1/Month
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 20
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.02
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|120,120,100,0
+12,1,0,238,59,191,18,3,4,0,4,0,0,0,0,0-0-0,0-255-255,|12||0-0-0
+Predator-Prey System With Capacity Limit
+10,2,prey,248,221,54,33,3,3,0,0,0,0,0,0
+10,3,predator,629,221,53,33,3,3,0,0,0,0,0,0
+12,4,48,425,221,10,8,0,3,0,0,-1,0,0,0
+1,5,7,4,4,0,0,22,0,0,0,-1--1--1,,1|(389,221)|
+1,6,7,2,100,0,0,22,0,0,0,-1--1--1,,1|(327,221)|
+11,7,48,358,221,6,8,34,3,0,0,1,0,0,0
+10,8,prey loss,358,250,28,21,40,3,0,0,-1,0,0,0
+12,9,48,56,220,10,8,0,3,0,0,-1,0,0,0
+1,10,12,2,4,0,0,22,0,0,0,-1--1--1,,1|(165,220)|
+1,11,12,9,100,0,0,22,0,0,0,-1--1--1,,1|(95,220)|
+11,12,48,130,220,6,8,34,3,0,0,1,0,0,0
+10,13,prey increase,130,249,45,21,40,3,0,0,-1,0,0,0
+12,14,48,463,221,10,8,0,3,0,0,-1,0,0,0
+1,15,17,3,4,0,0,22,0,0,0,-1--1--1,,1|(553,221)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(496,221)|
+11,17,48,525,221,6,8,34,3,0,0,1,0,0,0
+10,18,predator gain,525,249,50,20,40,3,0,0,-1,0,0,0
+12,19,48,809,220,10,8,0,3,0,0,-1,0,0,0
+1,20,22,19,4,0,0,22,0,0,0,-1--1--1,,1|(772,220)|
+1,21,22,3,100,0,0,22,0,0,0,-1--1--1,,1|(708,220)|
+11,22,48,740,220,6,8,34,3,0,0,1,0,0,0
+10,23,energy consumption,740,248,64,20,40,3,0,0,-1,0,0,0
+10,24,meet,450,351,25,13,8,3,0,0,0,0,0,0
+10,25,PREY GROWTH RATE,106,133,65,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10||0-0-0
+10,26,ENERGY CONSUMPTION RATE,736,129,90,21,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10||0-0-0
+10,27,PREY LOSS RATE,465,131,69,19,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10||0-0-0
+10,28,PREDATOR GAIN RATE,593,133,48,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10||0-0-0
+1,29,25,13,1,0,0,0,0,64,0,-1--1--1,,1|(98,174)|
+1,30,2,13,1,0,0,0,0,64,0,-1--1--1,,1|(180,290)|
+1,31,2,24,1,0,0,0,0,64,0,-1--1--1,,1|(315,313)|
+1,32,3,24,1,0,0,0,0,64,0,-1--1--1,,1|(576,309)|
+1,33,27,8,1,0,0,0,0,64,0,-1--1--1,,1|(425,199)|
+1,34,28,18,1,0,0,0,0,64,0,-1--1--1,,1|(519,171)|
+1,35,24,8,1,0,0,0,0,64,0,-1--1--1,,1|(425,299)|
+1,36,24,18,1,0,0,0,0,64,0,-1--1--1,,1|(480,290)|
+1,37,26,23,1,0,0,0,0,64,0,-1--1--1,,1|(751,177)|
+1,38,3,23,1,0,0,0,0,64,0,-1--1--1,,1|(701,294)|
+10,39,INITIAL PREY,245,178,45,10,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|8||0-0-0
+10,40,INITIAL PREDATOR,628,178,63,10,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|8||0-0-0
+10,41,CARRYING CAPACITY FOR PREY,288,133,89,26,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10||0-0-0
+1,42,41,13,1,0,0,0,0,64,0,-1--1--1,,1|(184,180)|
+1,43,39,2,0,0,0,0,0,0,1,-1--1--1,,1|(244,181)|
+1,44,40,3,0,0,0,0,0,0,1,-1--1--1,,1|(627,181)|
+12,46,0,1045,161,221,200,3,188,0,0,1,0,0,0
+EZ402Ab
+///---\\\
+:GRAPH EZ402Ab
+:TITLE Predator-Prey System With Capacity Limit
+:X-AXIS Time
+:X-DIV 10
+:X-MIN 0
+:X-MAX 20
+:SCALE
+:VAR prey
+:Y-MIN 0
+:Y-MAX 2
+:LINE-WIDTH 2
+:SCALE
+:VAR predator
+:Y-MIN 0
+:Y-MAX 2
+:LINE-WIDTH 4
+
+:GRAPH EZ402Ac
+:TITLE Predator-Prey System With Capacity Limit
+:X-AXIS prey
+:X-DIV 5
+:Y-DIV 4
+:X-MIN 0
+:X-MAX 2.5
+:SCALE
+:VAR predator
+:Y-MIN 0
+:Y-MAX 1
+:DATASET init=0,1; 0,1
+:LINE-WIDTH 1
+:VAR predator
+:DATASET init=0,25; 1,0
+:LINE-WIDTH 2
+:VAR predator
+:DATASET init=2,5; 0,1
+:LINE-WIDTH 3
+:L<%^E!@
+1:init=2,5; 0,1.vdf
+9:init=2,5; 0,1
+23:0
+15:0,0,0,1,0,0
+19:100,0
+27:2,
+34:0,
+4:Time
+5:prey increase
+24:0
+25:20.0003
+26:20.0003

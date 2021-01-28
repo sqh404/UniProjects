@@ -1,0 +1,28 @@
+Data sanitation list:
+
+Parse "name" and split ID nameID into seperate column when apllicable.  Apply default ID 1 to others for the sake of use as counter.
+Read string as line, find first comma, rfind first space from that comma position, determine if string between rfind and find is a number, if it is save string from pos 0 to rfind as namespace, rfind and find as nameID. If not, save string from pos 0 to find as namespace and 1 as nameID.
+
+Remove all data without a valid nametype and remove nametype column
+Strip year from data column and strip away the non-year data to eliminate some date formatting inconsistencies and issues
+
+
+Many rows of data for meteorites have missing location data despite there being location data available for other meteorites of the location name but different ID.  Using a python dictionary, every name can be associated with a location and be used to impute that data for locations with that data missing.
+
+
+
+
+Break reclass into seperate columns:
+Category - Chrondite, Iron, Stony-Iron, Achrondite, Unknown/other
+Class - see ref
+Group - Letter classification or other primary descriptor 
+Type - Chrondite number type or other seconary descriptor 
+GroupStatus - PRE:grouped in data set, RE:regrouped in data sanitation*, UNG:ungrouped
+*Data will be regrouped using low end of range estimate for chrondites (this is optimistic assumption)		
+
+
+
+Identifying Categories - reference:
+
+https://en.wikipedia.org/wiki/Meteorite_classification#Stony_meteorites
+

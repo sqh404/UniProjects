@@ -1,0 +1,106 @@
+JSON Schema
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "UID": {
+      "type": "integer"
+    },
+    "geolat": {
+      "type": "number"
+    },
+    "geolong": {
+      "type": "number"
+    },
+    "transcript": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "school": {
+              "type": "string"
+            },
+            "degree": {
+              "type": "string"
+            },
+            "program": {
+              "type": "string"
+            },
+            "GPA": {
+              "type": "number"
+            },
+            "Graduation": {
+              "type": "string"
+            },
+            "classes": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Department": {
+                      "type": "string"
+                    },
+                    "Code": {
+                      "type": "integer"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "Grade": {
+                      "type": "string"
+                    },
+                    "Year": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "Department",
+                    "Code",
+                    "Description",
+                    "Grade",
+                    "Year"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "school",
+            "degree",
+            "program",
+            "GPA",
+            "Graduation",
+            "classes"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName",
+    "UID",
+    "geolat",
+    "geolong",
+    "transcript"
+  ]
+}
+
+
+ 
+     
+           
+
+Windows 10 Compatible
+© 2001 - 2020 Liquid Technologies. All Rights Reserved. Privacy Policy and Trademarks
+BACK TO TOP
+Liquid Technologies Web Site uses cookies. Learn more.

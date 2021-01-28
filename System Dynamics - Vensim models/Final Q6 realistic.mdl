@@ -1,0 +1,131 @@
+{UTF-8}
+Growth=
+	IF THEN ELSE( Initial Population/Carrying Capacity < 0.5 , 0.02*Whale Population*(1-\
+		(Whale Population/Carrying Capacity
+	))
+	 , 0.07*Whale Population*(1-(Whale Population/Carrying Capacity)) )
+	~	whales/Year
+	~		|
+
+Carrying Capacity=
+	300000
+	~	whales
+	~		|
+
+Harvest=
+	Carrying Capacity*Growth/Harvest Ratio
+	~	whales/Year
+	~		|
+
+Harvest Ratio=
+	50000
+	~	 [10000,1e+06,5000]
+	~		|
+
+Initial Population=
+	20000
+	~	whales [0,300000,10000]
+	~		|
+
+Whale Population= INTEG (
+	Growth-Harvest,
+		Initial Population)
+	~	whales
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 40
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,Whale Population,273,162,40,20,3,3,0,0,0,0,0,0
+12,2,48,135,163,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(216,161)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(166,161)|
+11,5,48,193,161,6,8,34,3,0,0,1,0,0,0
+10,6,Growth,193,177,21,8,40,3,0,0,-1,0,0,0
+10,7,Carrying Capacity,121,92,46,8,8,3,0,0,0,0,0,0
+1,8,7,5,0,0,0,0,0,64,0,-1--1--1,,1|(153,123)|
+1,9,1,5,1,0,0,0,0,64,0,-1--1--1,,1|(227,112)|
+12,10,48,421,162,10,8,0,3,0,0,-1,0,0,0
+1,11,13,10,4,0,0,22,0,0,0,-1--1--1,,1|(389,162)|
+1,12,13,1,100,0,0,22,0,0,0,-1--1--1,,1|(334,162)|
+11,13,48,362,162,6,8,34,3,0,0,1,0,0,0
+10,14,Harvest,362,178,21,8,40,3,0,0,-1,0,0,0
+10,15,Harvest Ratio,409,104,35,8,8,3,0,0,0,0,0,0
+1,16,7,13,1,0,0,0,0,64,0,-1--1--1,,1|(318,88)|
+1,17,15,13,0,0,0,0,0,64,0,-1--1--1,,1|(388,129)|
+1,18,6,13,1,0,0,0,0,64,0,-1--1--1,,1|(272,210)|
+10,19,Initial Population,261,86,44,8,8,3,0,0,0,0,0,0
+1,20,19,1,1,0,0,0,0,64,1,-1--1--1,,1|(269,108)|
+12,21,0,236,372,150,150,3,12,0,0,1,0,0,0
+whales
+12,22,0,576,343,150,150,3,12,0,0,1,0,0,0
+flows
+1,24,19,5,1,0,0,0,0,64,0,-1--1--1,,1|(194,100)|
+///---\\\
+:GRAPH whales
+:TITLE whales
+:SCALE
+:VAR Whale Population
+
+:GRAPH flows
+:TITLE flows
+:SCALE
+:VAR Growth
+:VAR Harvest
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:Growth
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:0
+41:0
+42:1
+24:0
+25:40
+26:40

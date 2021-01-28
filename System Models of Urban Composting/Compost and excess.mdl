@@ -1,0 +1,154 @@
+{UTF-8}
+Capacity=
+	50
+	~	tons
+	~		|
+
+Compost Time=
+	48
+	~	Week
+	~		|
+
+Composting=
+	DELAY FIXED( Influx-Overflow , Compost Time , 0 )
+	~	tons/Week
+	~		|
+
+Finished stock= INTEG (
+	Composting-Used,
+		0)
+	~	tons
+	~		|
+
+Usage Rate=
+	3
+	~	tons/Week
+	~		|
+
+Overflow=
+	IF THEN ELSE( (Finished stock + Processing) <= Capacity , 0 , Influx )
+	~	tons/Week
+	~		|
+
+Total Waste= INTEG (
+	Overflow,
+		0)
+	~	tons
+	~		|
+
+Total Production= INTEG (
+	Used,
+		0)
+	~	
+	~		|
+
+Used=
+	IF THEN ELSE( Finished stock > Usage Rate , Usage Rate , 0 )
+	~	tons/Week
+	~		|
+
+Influx=
+	3
+	~	tons/Week
+	~		|
+
+Processing= INTEG (
+	Influx-Composting-Overflow,
+		0)
+	~	tons
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 260
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Week [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,150,0
+10,1,Processing,166,95,40,20,3,3,0,0,0,0,0,0
+10,2,Finished stock,324,96,40,20,3,3,0,0,0,0,0,0
+10,3,Total Production,509,93,40,20,3,3,0,0,0,0,0,0
+10,4,Total Waste,279,224,40,20,3,3,0,0,0,0,0,0
+12,5,48,41,93,10,8,0,3,0,0,-1,0,0,0
+1,6,8,1,4,0,0,22,0,0,0,-1--1--1,,1|(108,95)|
+1,7,8,5,100,0,0,22,0,0,0,-1--1--1,,1|(65,95)|
+11,8,48,85,95,6,8,34,3,0,0,1,0,0,0
+10,9,Influx,85,111,17,8,40,3,0,0,-1,0,0,0
+1,10,12,2,4,0,0,22,0,0,0,-1--1--1,,1|(265,94)|
+1,11,12,1,100,0,0,22,0,0,0,-1--1--1,,1|(220,94)|
+11,12,188,240,94,6,8,34,3,0,0,1,0,0,0
+10,13,Composting,240,110,32,8,40,3,0,0,-1,0,0,0
+1,14,16,3,4,0,0,22,0,0,0,-1--1--1,,1|(445,94)|
+1,15,16,2,100,0,0,22,0,0,0,-1--1--1,,1|(387,94)|
+11,16,140,416,94,6,8,34,3,0,0,1,0,0,0
+10,17,Used,416,110,15,8,40,3,0,0,-1,0,0,0
+1,18,20,4,4,0,0,22,0,0,0,-1--1--1,,1|(204,224)|
+1,19,20,1,100,0,0,22,0,0,0,-1--1--1,,1|(164,165)|
+11,20,172,164,224,6,8,34,3,0,0,1,0,0,0
+10,21,Overflow,164,240,25,8,40,131,0,0,-1,0,0,0
+1,22,8,12,1,0,0,0,0,64,0,-1--1--1,,1|(150,54)|
+10,23,Compost Time,232,169,38,8,8,3,0,0,0,0,0,0
+1,24,23,13,0,0,0,0,0,64,0,-1--1--1,,1|(234,146)|
+1,25,21,13,1,0,0,0,0,64,0,-1--1--1,,1|(197,152)|
+1,26,2,20,1,0,0,0,0,64,0,-1--1--1,,1|(273,172)|
+1,27,1,20,1,0,0,0,0,64,0,-1--1--1,,1|(120,169)|
+10,28,Capacity,30,238,24,8,8,3,0,0,0,0,0,0
+1,29,28,21,0,0,0,0,0,64,0,-1--1--1,,1|(89,238)|
+1,30,9,20,1,0,0,0,0,64,0,-1--1--1,,1|(85,161)|
+1,31,2,16,1,0,0,0,0,64,0,-1--1--1,,1|(359,51)|
+10,32,Usage Rate,355,166,30,8,8,3,0,0,0,0,0,0
+1,33,32,17,1,0,0,0,0,64,0,-1--1--1,,1|(407,153)|
+///---\\\
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:150,0
+27:0,
+34:0,
+4:Time
+5:Capacity
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:3
+41:0
+42:1
+24:0
+25:260
+26:260

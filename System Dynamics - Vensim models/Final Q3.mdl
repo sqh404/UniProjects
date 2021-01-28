@@ -1,0 +1,194 @@
+{UTF-8}
+Attrition1=
+	Rookies*0.95/52
+	~	people/Week
+	~		|
+
+Attrition2=
+	Experienced*0.02/52
+	~	people/Week
+	~		|
+
+Hiring=
+	IF THEN ELSE( Gap >= 0 , Hiring Rate , 0 )
+	~	people/Week
+	~		|
+
+Desired Hire Amount=
+	150
+	~	people
+	~		|
+
+Experienced= INTEG (
+	Training-Attrition2-Expertise,
+		0)
+	~	people
+	~		|
+
+Hiring Rate=
+	2
+	~	people/Week [0,10,0.5]
+	~		|
+
+Gap=
+	Desired Hire Amount-(Rookies+Experts+Experienced)
+	~	people
+	~		|
+
+Rookies= INTEG (
+	Hiring-Attrition1-Training,
+		0)
+	~	people
+	~		|
+
+Attrition3=
+	Experts*0.01/52
+	~	people/Week
+	~		|
+
+Expertise=
+	Experienced/150
+	~	people/Week
+	~		|
+
+Experts= INTEG (
+	Expertise-Attrition3,
+		0)
+	~	people
+	~		|
+
+Training=
+	Rookies/50
+	~	people/Week
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 500
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Week [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,Rookies,168,173,40,20,3,3,0,0,0,0,0,0
+10,2,Experienced,324,175,40,20,3,3,0,0,0,0,0,0
+10,3,Experts,481,178,40,20,3,3,0,0,0,0,0,0
+1,4,6,2,4,0,0,22,0,0,0,-1--1--1,,1|(268,174)|
+1,5,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(224,174)|
+11,6,188,246,174,6,8,34,3,0,0,1,0,0,0
+10,7,Training,246,190,23,8,40,3,0,0,-1,0,0,0
+1,8,10,3,4,0,0,22,0,0,0,-1--1--1,,1|(424,176)|
+1,9,10,2,100,0,0,22,0,0,0,-1--1--1,,1|(380,176)|
+11,10,348,402,176,6,8,34,3,0,0,1,0,0,0
+10,11,Expertise,402,192,25,8,40,3,0,0,-1,0,0,0
+12,12,48,36,173,10,8,0,3,0,0,-1,0,0,0
+1,13,15,1,4,0,0,22,0,0,0,-1--1--1,,1|(115,173)|
+1,14,15,12,100,0,0,22,0,0,0,-1--1--1,,1|(68,173)|
+11,15,48,96,173,6,8,34,3,0,0,1,0,0,0
+10,16,Hiring,96,189,18,8,40,3,0,0,-1,0,0,0
+12,17,48,590,178,10,8,0,3,0,0,-1,0,0,0
+1,18,20,17,4,0,0,22,0,0,0,-1--1--1,,1|(574,180)|
+1,19,20,3,100,0,0,22,0,0,0,-1--1--1,,1|(539,180)|
+11,20,48,563,180,6,8,34,3,0,0,1,0,0,0
+10,21,Attrition3,563,196,26,8,40,3,0,0,-1,0,0,0
+1,22,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(208,133)|
+1,23,2,10,1,0,0,0,0,64,0,-1--1--1,,1|(354,135)|
+1,24,3,21,1,0,0,0,0,64,0,-1--1--1,,1|(503,137)|
+10,25,Desired Hire Amount,177,68,54,8,8,3,0,0,0,0,0,0
+12,34,48,164,259,10,8,0,3,0,0,-1,0,0,0
+1,36,38,34,4,0,0,22,0,0,0,-1--1--1,,1|(164,239)|
+1,37,38,1,100,0,0,22,0,0,0,-1--1--1,,1|(164,204)|
+11,38,0,164,222,8,6,33,3,0,0,4,0,0,0
+10,39,Attrition1,198,222,26,8,40,3,0,0,-1,0,0,0
+12,40,48,323,281,10,8,0,3,0,0,-1,0,0,0
+1,42,44,40,4,0,0,22,0,0,0,-1--1--1,,1|(325,251)|
+1,43,44,2,100,0,0,22,0,0,0,-1--1--1,,1|(325,206)|
+11,44,0,325,224,8,6,33,3,0,0,4,0,0,0
+10,45,Attrition2,359,224,26,8,40,3,0,0,-1,0,0,0
+1,46,2,45,0,0,0,0,0,64,0,-1--1--1,,1|(341,199)|
+1,47,1,39,0,0,0,0,0,64,0,-1--1--1,,1|(182,197)|
+10,48,Hiring Rate,58,256,30,8,8,3,0,0,0,0,0,0
+1,49,48,15,0,0,0,0,0,64,0,-1--1--1,,1|(74,219)|
+10,51,Gap,72,102,12,8,8,3,0,0,0,0,0,0
+1,52,1,51,0,0,0,0,0,64,0,-1--1--1,,1|(117,135)|
+1,53,2,51,1,0,0,0,0,64,0,-1--1--1,,1|(200,118)|
+1,54,3,51,1,0,0,0,0,64,0,-1--1--1,,1|(303,99)|
+1,55,25,51,1,0,0,0,0,64,0,-1--1--1,,1|(108,73)|
+1,56,51,15,0,0,0,0,0,64,0,-1--1--1,,1|(81,131)|
+12,57,0,193,476,150,150,3,44,0,0,1,0,0,0
+Programmers
+12,58,0,531,475,150,150,3,44,0,0,1,0,0,0
+Flows
+///---\\\
+:GRAPH Programmers
+:TITLE Programmers
+:SCALE
+:VAR Rookies
+:VAR Experienced
+:VAR Experts
+
+:GRAPH Flows
+:TITLE Flows
+:SCALE
+:VAR Hiring Rate
+:VAR Training
+:VAR Expertise
+
+:GRAPH attrition
+:TITLE attrition
+:SCALE
+:VAR Attrition1
+:VAR Attrition2
+:VAR Attrition3
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:Hiring Rate
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:3
+41:0
+42:1
+24:0
+25:500
+26:500

@@ -1,0 +1,13 @@
+hashset for main transcript storage - HSET transcripts ID JSON
+	HLEN transcripts - count
+	HGET transcripts ID 
+	
+set for university departments - SADD colleges "University:Department"
+	SMEMBERS colleges
+
+sorted set for GPA - ZADD university:department ID GPA
+	ZRANGE university:department 0 10 - top 10 students in a department
+	
+	
+geo set for location - GEOADD locs long lat ID
+	GEORADIUS locs long lat WITHDIST - find closest applicants
