@@ -4,12 +4,8 @@ import googlemaps
 import sys
 import csv
 
-gmaps = googlemaps.Client(key='AIzaSyBmjaKszLBO5UPKvsVlyUgzC9Uwv2gUuR8')
 
-# results = gmaps.geocode("3945 Waterford CT Orange OH")
-#
-# print(results[0].keys())
-# print(results[0]["geometry"]["location"])
+gmaps = googlemaps.Client(key='MyGoogleApiKey')
 
 
 infile = open('missing.txt','r',encoding='utf-8')
