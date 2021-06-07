@@ -4,7 +4,7 @@ import googlemaps
 import sys
 import csv
 
-gmaps = googlemaps.Client(key='AIzaSyBmjaKszLBO5UPKvsVlyUgzC9Uwv2gUuR8')
+gmaps = googlemaps.Client(key='MY KEY HERE')
 
 # results = gmaps.geocode("Los Angeles")
 #
