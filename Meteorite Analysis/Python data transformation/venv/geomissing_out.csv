@@ -1,163 +1,75 @@
-"Tulia (c)
-",0,0
-"Eagles Nest
-",0,0
-"Yambo no.
-",0,0
-"Paneth's Iron
-",0,0
-"New York
-",0,0
-"Bolivia
-",0,0
-"Tobychan
-",0,0
-"South African Railways
-",0,0
-"Arabella
-",0,0
-"Taiga (stone)
-",0,0
-"Cacilandia
-",0,0
-"Minnesota (iron)
-",0,0
-"Jemlapur
-",0,0
-"Jilong
-",0,0
-"Sandford Cliffs
-",0,0
-"Southern Michigan
-",0,0
-"Ness County (c)
-",0,0
-"Hebei
-",0,0
-"Toronto
-",0,0
-"Clohars
-",0,0
-"Finger Ridge
-",0,0
-"Cumulus Hills
-",0,0
-"Roberts Massif
-",0,0
-"Sahara
-",0,0
-"Park City
-",0,0
-"Los Angeles
-",0,0
-"Shawnee
-",0,0
-"Pozo Almonte
-",0,0
-"Loyola
-",0,0
-"Talampaya
-",0,0
-"Udaipur
-",0,0
-"Wei-hui-fu (b)
-",0,0
-"Tres Estacas
-",0,0
-"Georgetown (iron)
-",0,0
-"Xiquipilco no.
-",0,0
-"Minnesota (stone)
-",0,0
-"Paso Rio Mayo
-",0,0
-"Natal
-",0,0
-"Paris
-",0,0
-"Maria Linden
-",0,0
-"Jalanash
-",0,0
-"Adelaide
-",0,0
-"Larkman Nunatak
-",0,0
-"Idaho
-",0,0
-"Mason Gully
-",0,0
-"Dunedin
-",0,0
-"Masua
-",0,0
-"Southern Arizona
-",0,0
-"Odell Glacier
-",0,0
-"Bench Crater
-",0,0
-"Mount Pratt
-",0,0
-"Mount Crean
-",0,0
-"Smithsonian Iron
-",0,0
-"Cochabamba
-",0,0
-"Buckley Island
-",0,0
-"Kansas University
-",0,0
-"Wei-hui-fu (a)
-",0,0
-"Uasara
-",0,0
-"California
-",0,0
-"Niger (C2)
-",0,0
-"Niger (L6)
-",0,0
-"Niger (LL6)
-",0,0
-"Cratheús (1950)
-",0,0
-"Densmore (c)
-",0,0
-"D'Angelo Bluff
-",0,0
-"La Serena
-",0,0
-"Zacatecas (1969)
-",0,0
-"Paracutu
-",0,0
-"Minas Gerais (b)
-",0,0
-"Arabian Peninsula
-",0,0
-"Asarco Mexicana
-",0,0
-"Happy Draw (a)
-",0,0
-"Durango
-",0,0
-"Slaghek's Iron
-",0,0
-"Mount Cranfield
-",0,0
-"Bulls Run
-",0,0
-"Happy Draw (b)
-",0,0
-"Elqui
-",0,0
-"Nova
-",0,0
-"Rio Bunge
-",0,0
-"Tribune (b)
-",0,0
 name,lat,long
+Tulia ,34.5358942,-101.7585159
+Eagles Nest,37.5350237,-95.8294851
+Yambo no.,25.7725714,-80.2222001
+New York,40.7127753,-74.0059728
+Bolivia,-16.290154,-63.588653
+Tobychan,40.7982133,-77.8599084
+South African Railways,-33.9221,18.425135
+Arabella,44.1605529,-77.3877182
+Taiga ,43.4362913,-79.714471
+Cacilandia,-15.948889,-50.016944
+Minnesota ,46.729553,-94.6858998
+Jemlapur,24.9249785,89.9463408
+Jilong,49.2694324,-123.1073025
+Sandford Cliffs,45.774697,-92.7790733
+Southern Michigan,42.272577,-84.978293
+Ness County ,38.4769509,-99.9912254
+Hebei,37.8956594,114.9042208
+Toronto,43.653226,-79.3831843
+Clohars,47.795818,-3.58491
+Finger Ridge,40.918266,-113.1358172
+Cumulus Hills,39.1140485,-94.7743087
+Roberts Massif,-85.533333,-177.0833329
+Sahara,23.4162027,25.66283
+Park City,40.6460622,-111.4979729
+Los Angeles,34.0522342,-118.2436849
+Shawnee,35.3272928,-96.9253004
+Pozo Almonte,-20.2567092,-69.7860128
+Loyola,41.8945098,-87.6366686
+Talampaya,-29.8906226,-67.853468
+Udaipur,24.585445,73.712479
+Wei-hui-fu ,35.398494,114.064907
+Tres Estacas,-26.9333305,-61.5999985
+Georgetown ,38.9076089,-77.0722585
+Xiquipilco no.,19.5573493,-99.6067531
+Minnesota ,46.729553,-94.6858998
+Paso Rio Mayo,-45.6890705,-70.2552694
+Natal,-28.5305539,30.8958242
+Paris,48.856614,2.3522219
+Maria Linden,43.0166742,-87.9491932
+Jalanash,46.6538769,61.1334908
+Adelaide,-34.9284989,138.6007456
+Idaho,44.0682019,-114.7420408
+Mason Gully,43.0934589,-93.1224934
+Dunedin,28.0197404,-82.7717684
+Masua,39.3335093,8.4194755
+Southern Arizona,32.2236992,-110.97134
+Odell Glacier,-76.733333,159.9166669
+Bench Crater,39.6082814,-112.7846794
+Mount Pratt,42.7331419,-71.9189665
+Mount Crean,-77.883333,159.4999998
+Smithsonian Iron,38.8860146,-77.0213921
+Cochabamba,-17.4139766,-66.1653224
+Buckley Island,39.3978754,-81.4217172
+Kansas University,38.9543439,-95.2557961
+Wei-hui-fu ,35.398494,114.064907
+California,36.778261,-119.4179324
+Niger ,17.607789,8.081666
+Cratheús ,-5.178204,-40.6695522
+Densmore ,39.6383396,-99.7392821
+D'Angelo Bluff,42.783137,-89.578408
+La Serena,-29.9026691,-71.2519374
+Zacatecas ,22.7708555,-102.5832426
+Paracutu,-17.2175165,-46.872278
+Minas Gerais ,-14.9617118,-46.2297844
+Arabian Peninsula,19.4914108,47.4490397
+Asarco Mexicana,25.6928723,-100.3052404
+Durango,37.27528,-107.8800667
+Slaghek's Iron,42.823004,-75.539685
+Mount Cranfield,-83.633333,160.9000003
+Bulls Run,39.5149511,-84.3606439
+Elqui,-29.8294614,-70.8119953
+Nova,38.8333664,-77.2364616
+Rio Bunge,34.5168353,-90.5874749
+Tribune ,37.8426745,-94.7065317
